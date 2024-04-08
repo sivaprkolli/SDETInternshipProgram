@@ -1,8 +1,13 @@
 package com.sip.programs;
 
-public class Conditions {
+import com.sip.javaBasics.AboutAccessModifiers;
+
+public class Conditions extends AboutAccessModifiers{
 
     public static void main(String[] args) {
+        AboutAccessModifiers aboutAccessModifiers = new AboutAccessModifiers();
+        aboutAccessModifiers.test1();
+
         int age = 18;
         String link = "Reset App State";
         if(age > 18){
