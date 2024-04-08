@@ -4,15 +4,20 @@ public class TestExecution extends TestAbstract {
 
     public static void main(String[] args) {
 
-        // rightside parent :: leftside child
+
         TestAbstract testAbstract = new TestAbstract();
         testAbstract.test1();
 
         new TestAbstract().test2();
 
-        // rightside grand-parent :: leftside child
+        // leftside grand parent :: rightside child
+        // WebDriver driver = new ChromeDriver();
         TestClass testClass = new TestExecution();
         testClass.test1(); //
+
+        TestExecution testExecution = new TestExecution();
+        testExecution.test1();
+
 
     }
 }
