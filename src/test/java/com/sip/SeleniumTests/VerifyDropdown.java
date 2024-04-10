@@ -59,5 +59,14 @@ WebDriver driver;
 
         Assert.assertEquals(listValues,actualValues);
 
+        System.out.println(dropDownSelect.isMultiple());
+
+      //  dropDownSelect.deselectByVisibleText("Customer Service Manager");
+        System.out.println(dropDownSelect.getWrappedElement());
+        System.out.println("******************************************");
+        System.out.println(dropDownSelect.equals("Customer Service Manager"));
+        System.out.println(jobTitleList);
+        System.out.println();
+
     }
 }
