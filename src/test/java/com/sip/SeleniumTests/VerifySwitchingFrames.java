@@ -33,7 +33,5 @@ public class VerifySwitchingFrames {
         driver.switchTo().defaultContent();
         driver.switchTo().frame("frame-bottom");
         driver.findElement(By.xpath("//body[normalize-space()='BOTTOM']")).isDisplayed();
-
-
     }
 }
