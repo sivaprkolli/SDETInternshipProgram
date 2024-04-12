@@ -1,9 +1,6 @@
 package com.sip.SeleniumTests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,6 +9,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.Set;
+import java.util.zip.DeflaterInputStream;
 
 public class VerifySwitchingWindows {
 
@@ -23,22 +21,27 @@ public class VerifySwitchingWindows {
         driver.get("https://naukri.com/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().maximize();
+        //driver.manage().window().fullscreen();
+       // driver.manage().window().minimize();
+        //driver.manage().window().setSize(new Dimension(600, 600));
 
-        WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        Dimension size = driver.manage().window().getSize();
+        int width = size.getWidth();
+        int height = size.getHeight();
+        System.out.println(width);
+        System.out.println(height);
 
-        String parentWindow = driver.getWindowHandle();
+        Point point = driver.manage().window().getPosition();
 
-        System.out.println("parentWindow :: " + parentWindow);
-        Set<String> windowIds = driver.getWindowHandles();
+        int x = point.getX();
+        int y = point.getY();
+        System.out.println(x);
+        System.out.println(y);
 
-        for (String window : windowIds) {
-            driver.switchTo().window(window);
-            if(driver.getTitle().equals("")){
-
-            }
-            String pageHeading = driver.findElement(By.tagName("h3")).getText();
-            System.out.println(pageHeading);
-        }
+        int x1 = (int) ((point.x )* (.50));
+        int y1 = (int) ((point.y )* (.50));
+        System.out.println(x1 + ", " + y1);
+        driver.quit();
     }
 
     @Test
