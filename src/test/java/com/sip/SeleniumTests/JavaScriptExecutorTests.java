@@ -74,9 +74,26 @@ public class JavaScriptExecutorTests {
         WebElement heading = driver.findElement(By.tagName("h3"));
         String textScript = "return arguments[0].innerText";
         String querySelectorScript = "return document.querySelector('.example > h3').innerText";
-        String message = javascriptExecutor.executeScript(textScript, heading).toString();
+        String message = javascriptExecutor.executeScript(querySelectorScript).toString();
         System.out.println(message);
 
         System.out.println();
+    }
+
+    @Test
+    public void scrollToElement(){
+        driver = new ChromeDriver();
+        JavascriptExecutor javascriptExecutor;
+        javascriptExecutor = (JavascriptExecutor) driver;
+        driver.get("https://the-internet.herokuapp.com/");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
+        WebElement lastElement = driver.findElement(By.cssSelector("[href='/tinymce']"));
+        String scrollScript = "arguments[0].scrollIntoView(true)";
+
+        javascriptExecutor.executeScript(scrollScript, lastElement);
+
+        String hilightElement = "arguments[0].setAttribute('style','color: #008000')";
+        javascriptExecutor.executeScript(hilightElement, lastElement);
     }
 }
