@@ -93,7 +93,7 @@ public class JavaScriptExecutorTests {
 
         javascriptExecutor.executeScript(scrollScript, lastElement);
 
-        String hilightElement = "arguments[0].setAttribute('style','color: #008000')";
-        javascriptExecutor.executeScript(hilightElement, lastElement);
+        String highlightElement = "arguments[0].setAttribute('style','color: #008000')";
+        javascriptExecutor.executeScript(highlightElement, lastElement);
     }
 }
