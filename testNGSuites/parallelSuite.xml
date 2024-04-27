@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="All Test Suite">
+<suite name="All Test Suite" parallel="methods">
+
+    <test verbose="2" preserve-order="true" name="smoke1">
+        <classes>
+            <class name="com.sip.TestNG.GroupTests"></class>
+        </classes>
+    </test>
+
     <parameter name="os" value="windows"></parameter>
-    <test verbose="2" preserve-order="true" name="Test1">
+    <test verbose="2" preserve-order="true" name="smoke2">
         <parameter name="country" value="India"></parameter>
         <classes>
+
             <class name="com.sip.TestNG.GetDataFromTestNGXML">
                 <parameter name="username" value="spr@yopmail.com"></parameter>
             </class>

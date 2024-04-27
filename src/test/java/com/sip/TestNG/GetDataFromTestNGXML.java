@@ -11,9 +11,17 @@ public class GetDataFromTestNGXML {
     }
 
     @Parameters("browser")
-    @BeforeTest
+   // @BeforeTest
     public void launchBrowser(String browserName){
         System.out.println(browserName);
+    }
+
+
+    @Parameters("country")
+    @BeforeMethod
+    public void beforeMethod(String country){
+        System.out.println("before method :: " + country);
+
     }
 
     @Parameters("username")
