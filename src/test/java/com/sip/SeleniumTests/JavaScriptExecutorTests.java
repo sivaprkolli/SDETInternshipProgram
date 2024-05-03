@@ -90,7 +90,6 @@ public class JavaScriptExecutorTests {
 
         WebElement lastElement = driver.findElement(By.cssSelector("[href='/tinymce']"));
         String scrollScript = "arguments[0].scrollIntoView(true)";
-
         javascriptExecutor.executeScript(scrollScript, lastElement);
 
         String highlightElement = "arguments[0].setAttribute('style','color: #008000')";
