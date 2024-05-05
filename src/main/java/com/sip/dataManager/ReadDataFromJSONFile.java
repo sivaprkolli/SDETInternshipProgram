@@ -26,7 +26,6 @@ public class ReadDataFromJSONFile {
         map.put("WebDriverIO", 7);
 
         System.out.println(map);
-
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("Selenium", 4);
         jsonObject.put("Appium", 2);
@@ -50,5 +49,13 @@ public class ReadDataFromJSONFile {
     @Test
     public void readDataFromJSONFile() throws IOException, ParseException {
         System.out.println(getJsonBody(System.getProperty("user.dir")+ "/androidDevice.json"));
+    }
+
+    @Test
+    public void readJson() throws IOException, ParseException {
+        Object obj = new JSONParser().parse(new FileReader(System.getProperty("user.dir")+"/androidDevice.json"));
+        JSONObject jsonObject = (JSONObject) obj;
+        String page = jsonObject.get("page").toString();
+        System.out.println(page);
     }
 }

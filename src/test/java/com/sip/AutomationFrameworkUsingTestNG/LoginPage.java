@@ -27,9 +27,9 @@ public class LoginPage {
     @FindBy(css = ".title")
     private WebElement productsTitle;
 
-    By usernameInputBox = By.cssSelector("#user-name");
-    By passwordInputBox = By.cssSelector("#user-name");
-    By submitButton = By.cssSelector("#user-name");
+    private By usernameInputBox = By.cssSelector("#user-name");
+    private By passwordInputBox = By.cssSelector("#user-name");
+    private By submitButton = By.cssSelector("#user-name");
 
 
     public void loginAsAdmin(String username, String password) {
