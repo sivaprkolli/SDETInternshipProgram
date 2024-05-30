@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests">
+    <test verbose="2" preserve-order="true"
+          name="chrome">
+        <parameter name="browserName" value="chrome"></parameter>
+        <parameter name="hostAddress" value="http://localhost:4444/wd/hub"></parameter>
+        <classes>
+            <class name="com.sip.SeleniumTests.GridTest">
+                <methods>
+                    <include name="assignmnetTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true"
+          name="firefox">
+        <parameter name="browserName" value="firefox"></parameter>
+        <parameter name="hostAddress" value="http://localhost:4444/wd/hub"></parameter>
+        <classes>
+            <class name="com.sip.SeleniumTests.GridTest">
+                <methods>
+                    <include name="assignmnetTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

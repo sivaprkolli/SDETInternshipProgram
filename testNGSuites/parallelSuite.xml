@@ -13,7 +13,6 @@
     <test verbose="2" preserve-order="true" name="smoke2">
         <parameter name="country" value="India"></parameter>
         <classes>
-
             <class name="com.sip.TestNG.GetDataFromTestNGXML">
                 <parameter name="username" value="spr@yopmail.com"></parameter>
             </class>
