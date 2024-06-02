@@ -26,7 +26,6 @@ public class LoginRequest {
                         .header("content-type","application/json")
                         .post("https://reqres.in/api/login");
 
-
         String output = response.asPrettyString();
         System.out.println(output);
 
