@@ -52,12 +52,6 @@ public class CalenderTest {
                 nextMonthNavigateButton.click();
             }
         }
-
         System.out.println();
-
-
-
-
-
     }
 }

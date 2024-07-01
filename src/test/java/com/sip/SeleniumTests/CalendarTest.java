@@ -35,7 +35,7 @@ public class CalendarTest {
        // WebElement cal = driver.findElement(By.cssSelector("#departure"));
         //jse.executeScript("return arguments[0].click()", cal);
         //
-        driver.findElement(By.cssSelector("[data-cy=\"departureDate\"]")).click();
+       // driver.findElement(By.cssSelector("[data-cy=\"departureDate\"]")).click();
         List<WebElement> monthAndYear = driver.findElements(By.cssSelector("div.DayPicker-Caption > div"));
         WebElement nextButton = driver.findElement(By.cssSelector("[aria-label=\"Next Month\"]"));
 
